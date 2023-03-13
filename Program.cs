@@ -35,9 +35,24 @@ void PrintArray(int[] a)
     System.Console.WriteLine("Your array = [{0}]", string.Join(", ", a));
 }
 
-// Task 1
+int SumAtOddIndex(int[] a)
+{
+    int result = 0;
+    for (int i = 1; i < a.Length; i+=2)
+    {
+        result += a[i];
+    }
+    return result;
+}
 
-int[] array = CreateArray(3, TakeDigit("Input Min = "), TakeDigit("Input Max = "));
+// Task 1
+/*
+int[] array = CreateArray(3, 100, 999);
 PrintArray(array);
 System.Console.WriteLine("Result = " + CountEvenInArray(array));
+*/
 
+// Task 2
+int[] array = CreateArray(5, 0, 12);
+PrintArray(array);
+System.Console.WriteLine("Result = " + SumAtOddIndex(array));
