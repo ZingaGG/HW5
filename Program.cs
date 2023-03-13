@@ -1,6 +1,13 @@
-﻿int[] CreateArray(int Length, int Min, int Max)
+﻿int TakeDigit(string a)
 {
-    int [] array = new int[Length];
+    System.Console.WriteLine(a);
+    int b = Int32.Parse(System.Console.ReadLine());
+    return b;
+}
+
+int[] CreateArray(int Length, int Min, int Max)
+{
+    int[] array = new int[Length];
     for (int i = 0; i < Length; i++)
     {
         array[i] = Random.Shared.Next(Min, Max + 1);
@@ -22,3 +29,15 @@ int CountEvenInArray(int[] array)
 
     return result;
 }
+
+void PrintArray(int[] a)
+{
+    System.Console.WriteLine("Your array = [{0}]", string.Join(", ", a));
+}
+
+// Task 1
+
+int[] array = CreateArray(3, TakeDigit("Input Min = "), TakeDigit("Input Max = "));
+PrintArray(array);
+System.Console.WriteLine("Result = " + CountEvenInArray(array));
+
