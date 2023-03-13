@@ -45,6 +45,31 @@ int SumAtOddIndex(int[] a)
     return result;
 }
 
+int FindMaxAndMin(int[] array, bool a)
+{
+    int result = array[0];
+
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (a)
+        {
+            if(result < array[i])
+            {
+                result = array[i];
+            }
+        }
+        else
+        {
+            if(result > array[i])
+            {
+                result = array[i];
+            }
+        }
+    }
+
+    return result;
+}
+
 // Task 1
 /*
 int[] array = CreateArray(3, 100, 999);
@@ -53,6 +78,17 @@ System.Console.WriteLine("Result = " + CountEvenInArray(array));
 */
 
 // Task 2
+/*
 int[] array = CreateArray(5, 0, 12);
 PrintArray(array);
 System.Console.WriteLine("Result = " + SumAtOddIndex(array));
+*/
+
+// Task 3
+int[] array = CreateArray(5, 1, 100);
+PrintArray(array);
+int Max = FindMaxAndMin(array, true);
+System.Console.WriteLine("Max = " + Max);
+int Min = FindMaxAndMin(array, false);
+System.Console.WriteLine("Min = " + Min);
+System.Console.WriteLine("Result = " + (Max-Min));
